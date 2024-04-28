@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gomapp
+spec:
+  selector:
+    matchLabels:
+      app: gomapp
+  template:
+    metadata:
+      labels:
+        app: gomapp
+    spec:
+      containers:
+        - name: gomapp
+          image: 394952106077.dkr.ecr.ap-northeast-2.amazonaws.com/gomapp:latest
+          ports:
+            - containerPort: 3000
