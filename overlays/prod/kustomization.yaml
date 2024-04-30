@@ -3,4 +3,5 @@ kind: Kustomization
 bases:
   - ../../base
 patchesStrategicMerge:
-  - replica_count.yaml
+  - deployment_patch.yaml
+  - namespace_patch.yaml
