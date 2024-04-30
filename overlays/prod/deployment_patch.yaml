@@ -4,3 +4,7 @@ metadata:
   name: gomapp
 spec:
   replicas: 2
+  template:
+    spec:
+      containers:
+        - image: 394952106077.dkr.ecr.ap-northeast-2.amazonaws.com/gomapp:1
