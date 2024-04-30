@@ -7,4 +7,5 @@ spec:
   template:
     spec:
       containers:
-        - image: 394952106077.dkr.ecr.ap-northeast-2.amazonaws.com/gomapp:1
+        - name: gomapp
+          image: 394952106077.dkr.ecr.ap-northeast-2.amazonaws.com/gomapp:1
