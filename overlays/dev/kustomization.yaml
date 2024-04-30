@@ -1,6 +1,7 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
+  - namespace.yaml # 네임스페이스 먼저 생성
   - ../../base
 patches:
   - path: deployment_patch.yaml
@@ -9,7 +10,3 @@ patches:
       version: v1
       kind: Deployment
       name: gomapp
-  - path: namespace_patch.yaml
-    target:
-      kind: Namespace
-      name: gomapp-dev
