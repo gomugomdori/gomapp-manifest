@@ -1,7 +1,15 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
-bases:
+resources:
   - ../../base
-patchesStrategicMerge:
-  - deployment_patch.yaml
-  - namespace_patch.yaml
+patches:
+  - path: deployment_patch.yaml
+    target:
+      group: apps
+      version: v1
+      kind: Deployment
+      name: gomapp
+  - path: namespace_patch.yaml
+    target:
+      kind: Namespace
+      name: gomapp-dev
