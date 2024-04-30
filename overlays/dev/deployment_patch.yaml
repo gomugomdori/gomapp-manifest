@@ -3,9 +3,9 @@ kind: Deployment
 metadata:
   name: gomapp
 spec:
-  replicas: 1
+  replicas: 2
   template:
     spec:
       containers:
         - name: gomapp
-          image: 394952106077.dkr.ecr.ap-northeast-2.amazonaws.com/gomapp:1
+          image: 394952106077.dkr.ecr.ap-northeast-2.amazonaws.com/gomapp:2
