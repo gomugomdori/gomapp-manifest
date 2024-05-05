@@ -11,7 +11,8 @@ metadata:
 spec:
   ingressClassName: alb
   rules:
-    - http:
+    - host: "api.gomugom.site"
+      http:
         paths:
           - path: /
             pathType: Prefix
