@@ -3,11 +3,15 @@ kind: Ingress
 metadata:
   name: gomapp-ingress
   annotations:
-    alb.ingress.kubernetes.io/scheme: internet-facing
-    alb.ingress.kubernetes.io/target-type: ip
-    alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}]'
+    alb.ingress.kubernetes.io/scheme: "internet-facing"
+    alb.ingress.kubernetes.io/target-type: "ip"
+    alb.ingress.kubernetes.io/listen-ports: '[{"HTTP":80},{"HTTPS":443}]'
+    alb.ingress.kubernetes.io/ssl-redirect: "443"
+    alb.ingress.kubernetes.io/certificate-arn: "arn:aws:acm:ap-northeast-2:394952106077:certificate/765f2b05-b364-4dc9-ba16-32f4350f1c1e"
     alb.ingress.kubernetes.io/group.name: "gom-ingress"
-    alb.ingress.kubernetes.io/group.order: "2"
+    alb.ingress.kubernetes.io/group.order: "3"
+    external-dns.alpha.kubernetes.io/hostname: "api.gomugom.site"
+    alb.ingress.kubernetes.io/healthcheck-path: "/health"
 spec:
   ingressClassName: alb
   rules:
